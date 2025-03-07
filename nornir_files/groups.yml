@@ -1,0 +1,11 @@
+arista:
+  connection_options:
+    napalm:
+      platform: eos
+      extras:
+        optional_args:
+          transport: ssh
+    netmiko:
+      extras:
+        device_type: arista_eos
+        secret: admin

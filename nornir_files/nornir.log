@@ -1,0 +1,2270 @@
+2025-02-16 12:01:18,140 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-02-16 12:01:18,153 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 5 hosts
+2025-02-16 12:01:28,176 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.10.13:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.10.13
+
+2025-02-16 12:01:28,176 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.10.11:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.10.11
+
+2025-02-16 12:01:28,177 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.10.12:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.10.12
+
+2025-02-16 12:01:28,178 - nornir.core.task -    ERROR -      start() - Host 'leaf3': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.10.15:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.10.15
+
+2025-02-16 12:01:28,178 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.10.14:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.10.14
+
+2025-02-16 12:01:28,179 - nornir.core.task -    ERROR -      start() - Host 'leaf3': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-16 12:01:28,180 - nornir.core.task -    ERROR -      start() - Host 'leaf1': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-16 12:01:28,180 - nornir.core.task -    ERROR -      start() - Host 'spine1': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-16 12:01:28,180 - nornir.core.task -    ERROR -      start() - Host 'spine2': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-16 12:01:28,181 - nornir.core.task -    ERROR -      start() - Host 'leaf2': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-16 12:22:24,102 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-02-16 12:22:24,122 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-02-16 12:22:24,123 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-02-16 12:22:24,123 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-02-16 12:22:24,123 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-02-16 12:22:24,124 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-02-20 16:58:16,519 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-02-20 16:58:16,546 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-02-20 16:58:16,547 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-02-20 16:58:16,547 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-02-20 16:58:16,548 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-02-20 16:58:16,549 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-02-20 16:58:19,636 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.13:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.13
+
+2025-02-20 16:58:19,637 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.14
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.14:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.14
+
+2025-02-20 16:58:19,638 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.15
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.15:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.15
+
+2025-02-20 16:58:19,639 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-20 16:58:19,639 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-02-20 16:58:19,640 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/user/BGP/venv/lib/python3.11/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-03-03 21:53:12,896 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 21:53:12,898 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-03-03 21:53:12,898 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-03-03 21:53:12,899 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-03-03 21:53:12,899 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-03-03 21:53:12,899 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    device_type = kwargs["device_type"]
+                  ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'device_type'
+
+2025-03-03 21:53:12,900 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/configure_sflow.py", line 20, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=sflow_commands)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 21:53:12,900 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/configure_sflow.py", line 20, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=sflow_commands)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 21:53:12,900 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/configure_sflow.py", line 20, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=sflow_commands)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 21:53:12,900 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/configure_sflow.py", line 20, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=sflow_commands)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 21:53:12,901 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/configure_sflow.py", line 20, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=sflow_commands)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 21:54:32,823 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 21:56:11,807 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 21:57:23,634 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 21:59:17,248 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 21:59:17,301 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 21:59:17,301 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 21:59:17,302 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 21:59:17,302 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 21:59:17,303 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:03:16,568 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:04:12,846 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:05:58,261 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:11:22,156 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:12:13,905 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:17:29,445 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:28:56,991 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:28:56,998 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.14
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.14:22
+
+
+
+2025-03-03 22:28:56,998 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.11
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.11:22
+
+
+
+2025-03-03 22:28:56,999 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.13:22
+
+
+
+2025-03-03 22:28:56,999 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.12
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.12:22
+
+
+
+2025-03-03 22:28:56,999 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.15
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 28, in netmiko_send_config
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.15:22
+
+
+
+2025-03-03 22:28:57,000 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/sflow_config.py", line 10, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=["sflow run"])
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 22:28:57,000 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/sflow_config.py", line 10, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=["sflow run"])
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 22:28:57,000 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/sflow_config.py", line 10, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=["sflow run"])
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 22:28:57,000 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/sflow_config.py", line 10, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=["sflow run"])
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 22:28:57,001 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'configure_sflow' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/sflow_config.py", line 10, in configure_sflow
+    task.run(task=netmiko_send_config, config_commands=["sflow run"])
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2025-03-03 22:31:22,537 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 22:31:22,547 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:31:22,547 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:31:22,549 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:31:22,549 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:31:22,549 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:31:22,553 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.13:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.13
+
+2025-03-03 22:31:22,553 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-03-03 22:31:31,527 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:40:12,078 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 22:40:12,088 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:40:12,089 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:40:12,089 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:40:12,089 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:40:12,089 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:43:21,294 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 22:43:21,307 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:43:21,307 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:43:21,307 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:43:21,308 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:43:21,308 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:44:11,982 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-03 22:45:13,401 -  nornir.core -     INFO -        run() - Running task 'connect_to_sdn_controller' with args {} on 5 hosts
+2025-03-03 22:46:13,968 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 22:46:13,978 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:46:13,978 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:46:13,979 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:46:13,979 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:46:13,979 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:51:06,277 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-03 22:51:06,286 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:51:06,290 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-03 22:51:06,290 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:51:06,291 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-03 22:51:06,291 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-03 22:51:06,297 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.13:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.13
+
+2025-03-03 22:51:06,297 - nornir.core.task -    ERROR -      start() - Host 'eos-03': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-03-03 22:51:06,298 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.15
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.15:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.15
+
+2025-03-03 22:51:06,298 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1142, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.100.14
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/ssh_dispatcher.py", line 410, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 493, in __init__
+    self._open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 498, in _open
+    self.establish_connection()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/netmiko/base_connection.py", line 1164, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: arista_eos 192.168.100.14:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 31, in napalm_configure
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/eos/eos.py", line 197, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 192.168.100.14
+
+2025-03-03 22:51:06,298 - nornir.core.task -    ERROR -      start() - Host 'eos-05': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-03-03 22:51:06,299 - nornir.core.task -    ERROR -      start() - Host 'eos-04': task 'napalm_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 15, in napalm_send_config
+    task.run(task=napalm_configure, configuration=config, dry_run=False)
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2025-03-05 16:00:18,089 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-05 16:00:18,151 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:00:18,151 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:00:18,152 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:00:18,152 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:00:18,152 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-05 16:01:26,275 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-05 16:10:09,156 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-05 16:10:09,168 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:10:09,168 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:10:09,168 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:10:09,169 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:10:09,169 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-05 16:28:30,877 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-05 16:28:30,887 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:28:30,888 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 16:28:30,888 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:28:30,888 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 16:28:30,888 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-05 16:28:40,708 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-05 16:30:41,791 -  nornir.core -     INFO -        run() - Running task 'configure_openflow' with args {} on 5 hosts
+2025-03-05 16:49:40,218 -  nornir.core -     INFO -        run() - Running task 'enable_api' with args {} on 5 hosts
+2025-03-05 17:05:11,206 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-05 17:05:11,227 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 17:05:11,227 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 17:05:11,228 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 17:05:11,228 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 17:05:11,228 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-05 17:05:21,646 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-05 17:16:53,549 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-05 17:16:53,559 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 17:16:53,560 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-05 17:16:53,560 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 17:16:53,560 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-05 17:16:53,560 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-05 17:17:00,335 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-05 17:22:23,959 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts
+2025-03-07 14:10:48,562 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-07 14:10:48,572 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-07 14:10:48,573 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-07 14:10:48,575 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-07 14:10:48,575 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-07 14:10:48,575 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-07 14:42:12,314 -  nornir.core -     INFO -        run() - Running task 'render_config' with args {} on 5 hosts
+2025-03-07 14:42:12,324 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-07 14:42:12,325 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "config_templates/config.j2", line 11, in top-level template code
+    router bgp {{ bgp.asn }}
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'bgp' is undefined
+
+2025-03-07 14:42:12,325 - nornir.core.task -    ERROR -      start() - Host 'eos-02': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-07 14:42:12,325 - nornir.core.task -    ERROR -      start() - Host 'eos-01': task 'render_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/nornir_files/render_configs.py", line 8, in render_config
+    result = task.run(task=template_file, template=template, path='config_templates/', **task.host)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/beans/BGP/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2025-03-07 14:42:12,326 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config' with args {} on 3 hosts
+2025-03-07 14:42:19,569 -  nornir.core -     INFO -        run() - Running task 'configure_sflow' with args {} on 5 hosts

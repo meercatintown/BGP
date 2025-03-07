@@ -1,0 +1,33 @@
+name: bgp-net
+
+mgmt:
+  network: mgmt
+  ipv4-subnet: 192.168.100.0/24
+
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.33.1F
+  nodes:
+    spine1:
+      kind: ceos
+      mgmt-ipv4: 192.168.100.11
+    spine2:
+      kind: ceos
+      mgmt-ipv4: 192.168.100.12
+    leaf1:
+      kind: ceos
+      mgmt-ipv4: 192.168.100.13
+    leaf2:
+      kind: ceos
+      mgmt-ipv4: 192.168.100.14
+    leaf3:
+      kind: ceos
+      mgmt-ipv4: 192.168.100.15
+  links:
+    - endpoints: ["leaf1:eth1", "spine1:eth1"]
+    - endpoints: ["leaf1:eth2", "spine2:eth1"]
+    - endpoints: ["leaf2:eth1", "spine1:eth2"]
+    - endpoints: ["leaf2:eth2", "spine2:eth2"]
+    - endpoints: ["leaf3:eth1", "spine1:eth3"]
+    - endpoints: ["leaf3:eth2", "spine2:eth3"]
